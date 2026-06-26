@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    @keyframes pageIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+    #top{animation:pageIn .55s cubic-bezier(.22,.61,.36,1) both;}
+    #top.is-leaving{animation:none!important;opacity:0;transform:translateY(-6px);transition:opacity .3s ease,transform .3s ease;}
+    @media (prefers-reduced-motion:reduce){#top{animation:none;}#top.is-leaving{transition:none;}}
+  </style>
+
+</helmet>
+
+<div id="top" style="--ac: {{ accent }}; min-height:100vh; background:#1A1822; font-family:'Space Grotesk',sans-serif;">
+  <div style="max-width:1040px; margin:0 auto; padding:56px 72px 96px;">
+
+    <!-- header -->
+    <div style="display:flex; justify-content:space-between; align-items:center; font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#7E7890;">
+      <a href="home.html" style="color:var(--ac,#A78BFA); text-decoration:none;" style-hover="opacity:0.7;">← Back to home</a>
+      <span>Medical Device</span>
+    </div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:70px; line-height:0.98; letter-spacing:-0.03em; color:#F2EFE9; margin:30px 0 0;">Pro-dose</h1>
+    <p style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:22px; line-height:1.5; color:#B8B3C4; margin:22px 0 0; max-width:820px; text-wrap:pretty;">PRO-DOSE - an FDA-cleared system by Nurise for real-time patient dose monitoring during radiotherapy treatment.</p>
+    <div style="display:flex; gap:64px; margin:40px 0 0; padding:24px 0; border-top:1px solid #2E2B38; border-bottom:1px solid #2E2B38;">
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Role</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">UX Design</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Sector</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">Medical device · Radiotherapy</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Client</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">Nurise</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Timeline</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">2022</div></div>
+    </div>
+
+    <!-- overview -->
+    <section style="margin-top:64px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ac,#A78BFA); margin-bottom:12px;">Overview</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:27px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 20px; padding-bottom:14px; border-bottom:1px solid #2E2B38; position:relative; display:inline-block;"><span style="position:absolute; left:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;">></span><span style="position:absolute; right:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;"><</span>Seeing the dose, in real time</h2>
+      <div style="max-width:820px;">
+        <p style="font-size:15px; line-height:1.75; color:#B8B3C4; margin:0 0 16px; text-wrap:pretty;">PRO-DOSE is a real-time, in-vivo dosimetry system that lets clinical teams monitor the radiation dose delivered to a patient as a treatment happens - rather than verifying it only afterwards. Multiple dosimeter probes, each mapped to an anatomical reference point, stream live dose-rate readings so the team can confirm the patient is receiving exactly the planned dose.</p>
+        <p style="font-size:15px; line-height:1.75; color:#B8B3C4; margin:0; text-wrap:pretty;">The product spans the full workflow: defining how a dosimetry session is set up, configuring the dosimeter channels, and then monitoring delivered dose against the planned target throughout treatment. It is an FDA-cleared medical device - a safety-critical, regulated environment where clarity and trust in the interface are essential.</p>
+      </div>
+    </section>
+
+    <!-- my role -->
+    <section style="margin-top:64px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ac,#A78BFA); margin-bottom:12px;">My Role</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:27px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 24px; padding-bottom:14px; border-bottom:1px solid #2E2B38; position:relative; display:inline-block;"><span style="position:absolute; left:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;">></span><span style="position:absolute; right:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;"><</span>Research and design, end to end</h2>
+      <p style="font-size:15px; line-height:1.75; color:#B8B3C4; margin:0; max-width:820px; text-wrap:pretty;">I led the full UX effort on Pro-dose - from research through to the design of every screen. Working in a regulated medical context meant grounding each decision in real clinical workflows and validating it against the needs of the people delivering treatment.</p>
+    </section>
+
+    <!-- research -->
+    <section style="margin-top:64px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ac,#A78BFA); margin-bottom:12px;">Research</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:27px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 20px; padding-bottom:14px; border-bottom:1px solid #2E2B38; position:relative; display:inline-block;"><span style="position:absolute; left:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;">></span><span style="position:absolute; right:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;"><</span>Understanding the clinical workflow</h2>
+      <p style="font-size:15px; line-height:1.75; color:#B8B3C4; margin:0 0 26px; max-width:820px; text-wrap:pretty;">To ground the design in how treatment is actually delivered, the research combined a set of complementary methods - mapping the service, the users, and the safety-critical steps of the dosimetry process. The story map and service blueprint were built in close collaboration with stakeholders, ensuring the workflow reflected real clinical practice.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px;">
+        <sc-for list="{{ researchItems }}" as="x" hint-placeholder-count="6">
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:12px; letter-spacing:0.04em; color:#F2EFE9; background:#232029; border:1px solid #2E2B38; border-radius:2px; padding:9px 15px;">{{ x }}</span>
+        </sc-for>
+      </div>
+
+      <figure style="margin:0 0 36px;">
+        <div style="background:#232029; border:1px solid #2E2B38; border-radius:6px; overflow:hidden; padding:14px;">
+          <img src="images/prodose-storymap.jpg" alt="User story mapping board for Pro-dose" style="display:block; width:100%; height:auto; border-radius:3px;">
+        </div>
+        <figcaption style="margin-top:12px; max-width:820px;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ac,#A78BFA);">Story map e service blueprint</div>
+          <p style="font-size:14px; line-height:1.7; color:#9A94A6; margin:6px 0 0; text-wrap:pretty;">A user story map laying out the dosimetry journey end to end - activities along the top, broken down into tasks and prioritised into releases below. Built collaboratively with stakeholders.</p>
+        </figcaption>
+      </figure>
+
+      <figure style="margin:0;">
+        <div style="background:#232029; border:1px solid #2E2B38; border-radius:6px; overflow:hidden; padding:14px;">
+          <img src="images/prodose-ia.jpg" alt="Information architecture and use-case flows for Pro-dose" style="display:block; width:100%; height:auto; border-radius:3px;">
+        </div>
+        <figcaption style="margin-top:12px; max-width:820px;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ac,#A78BFA);">Information architecture</div>
+          <p style="font-size:14px; line-height:1.7; color:#9A94A6; margin:6px 0 0; text-wrap:pretty;">The sitemap and per-release use-case flows, defining how screens connect and how users move through each scenario.</p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- design -->
+    <section style="margin-top:64px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ac,#A78BFA); margin-bottom:12px;">Design</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:27px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 20px; padding-bottom:14px; border-bottom:1px solid #2E2B38; position:relative; display:inline-block;"><span style="position:absolute; left:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;">></span><span style="position:absolute; right:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;"><</span>Translating insights into a clear, safe interface</h2>
+      <p style="font-size:15px; line-height:1.75; color:#B8B3C4; margin:0 0 28px; max-width:820px; text-wrap:pretty;">Turning the research into a real-time interface designed for clarity and trust in a safety-critical context - covering the full design process:</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0 56px; max-width:880px;">
+        <sc-for list="{{ designItems }}" as="x" hint-placeholder-count="7">
+          <div style="display:flex; gap:14px; align-items:baseline; padding:13px 0; border-bottom:1px solid #2E2B38;">
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:12px; color:#F5CE47; min-width:22px;">{{ x.n }}</span>
+            <span style="font-size:14px; color:#E6E2EE; line-height:1.5;">{{ x.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- the experience -->
+    <section style="margin-top:64px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ac,#A78BFA); margin-bottom:12px;">The Experience</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:27px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 28px; padding-bottom:14px; border-bottom:1px solid #2E2B38;">From set-up to live monitoring</h2>
+
+      <sc-for list="{{ screens }}" as="s" hint-placeholder-count="4">
+        <figure style="margin:0 0 44px;">
+          <div style="background:#F2EFE9; border-radius:6px; overflow:hidden; padding:10px;">
+            <img src="{{ s.img }}" alt="{{ s.title }}" style="display:block; width:100%; height:auto; border-radius:3px;">
+          </div>
+          <figcaption style="margin-top:14px; max-width:820px;">
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ac,#A78BFA);">{{ s.step }}</div>
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:21px; color:#F2EFE9; margin-top:6px;">{{ s.title }}</div>
+            <p style="font-size:14px; line-height:1.7; color:#9A94A6; margin:8px 0 0; text-wrap:pretty;">{{ s.desc }}</p>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </section>
+
+    <!-- footer -->
+    <div style="margin-top:80px; padding-top:24px; border-top:1px solid #2E2B38; display:flex; justify-content:space-between; font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">
+      <a href="home.html" style="color:var(--ac,#A78BFA); text-decoration:none;" style-hover="opacity:0.7;">← Back to home</a>
+      <a href="#top" style="color:var(--ac,#A78BFA); text-decoration:none;" style-hover="opacity:0.7;">To the top ↑</a>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1040, &quot;height&quot;: 1100},
+  &quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#A78BFA&quot;, &quot;tsType&quot;: &quot;string&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const researchItems = [
+      'Use cases',
+      'Story map',
+      'Expert review',
+      'Service blueprint',
+      'Sitemap',
+    ];
+    const designItems = [
+      'User research and stakeholder interviews',
+      'Service and process mapping',
+      'User flows and task analysis',
+      'Information architecture',
+      'Wireframing and prototyping',
+      'Interaction design',
+      'Design documentation and handoff',
+    ].map((label, i) => ({ n: String(i + 1).padStart(2, '0'), label }));
+    const screens = [
+      {
+        step: 'Step 1 / 3 - Define',
+        title: 'Define how to perform dosimetry',
+        desc: 'The session begins with a clear choice of method - uploading a treatment plan, entering patient data manually, or configuring channels only - so the workflow adapts to how the team works.',
+        img: 'images/prodose-step1.png',
+      },
+      {
+        step: 'Step 3 / 3 - Configure',
+        title: 'Configure dosimeter channels',
+        desc: 'Each probe is set up as a colour-coded channel with its reference point, probe ID, and target dose. Inline tooltips explain every field, reducing the risk of set-up errors in a high-stakes context.',
+        img: 'images/prodose-channels.png',
+      },
+      {
+        step: 'In treatment - Feedback',
+        title: 'Start-up feedback',
+        desc: 'While the treatment machine starts, a clear progress state reassures the team and gives an explicit safety instruction - not to remove the probes - at exactly the moment it matters.',
+        img: 'images/prodose-progress.png',
+      },
+      {
+        step: 'In treatment - Monitor',
+        title: 'Delivered dose-rate monitoring',
+        desc: 'During treatment, each channel streams its live dose-rate curve alongside a large, glanceable cumulative dose against the planned target - letting the team confirm the patient is receiving the intended dose, in real time.',
+        img: 'images/prodose-monitoring.png',
+      },
+    ];
+    const accent = this.props.accent ?? '#A78BFA';
+    return { researchItems, designItems, screens, accent };
+  }
+}
+</script>
+</body>
+</html>

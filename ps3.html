@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    @keyframes pageIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+    #top{animation:pageIn .55s cubic-bezier(.22,.61,.36,1) both;}
+    #top.is-leaving{animation:none!important;opacity:0;transform:translateY(-6px);transition:opacity .3s ease,transform .3s ease;}
+    @media (prefers-reduced-motion:reduce){#top{animation:none;}#top.is-leaving{transition:none;}}
+  </style>
+
+</helmet>
+
+<div id="top" style="--ac: {{ accent }}; min-height:100vh; background:#1A1822; font-family:'Space Grotesk',sans-serif;">
+  <div style="max-width:1040px; margin:0 auto; padding:56px 72px 96px;">
+
+    <!-- header -->
+    <div style="display:flex; justify-content:space-between; align-items:center; font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#7E7890;">
+      <a href="home.html" style="color:var(--ac,#A78BFA); text-decoration:none;" style-hover="opacity:0.7;">← Back to home</a>
+      <span>Defence</span>
+    </div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:70px; line-height:0.98; letter-spacing:-0.03em; color:#F2EFE9; margin:30px 0 0;">PS3</h1>
+    <p style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:22px; line-height:1.5; color:#B8B3C4; margin:22px 0 0; max-width:820px; text-wrap:pretty;">Portuguese Sky Sentinel System - a Command and Control platform for the Portuguese Air Force, supporting the planning, monitoring, and execution of operational missions.</p>
+    <div style="display:flex; gap:64px; margin:40px 0 0; padding:24px 0; border-top:1px solid #2E2B38; border-bottom:1px solid #2E2B38;">
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Role</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">Product Owner &amp; UX Designer</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Sector</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">Defence · Command &amp; Control</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Client</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">Portuguese Air Force</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Timeline</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">2020 - 2021</div></div>
+    </div>
+
+    <!-- overview -->
+    <section style="margin-top:64px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ac,#A78BFA); margin-bottom:12px;">Overview</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:27px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 20px; padding-bottom:14px; border-bottom:1px solid #2E2B38; position:relative; display:inline-block;"><span style="position:absolute; left:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;">></span><span style="position:absolute; right:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;"><</span>Command and Control for air operations</h2>
+      <div style="max-width:820px;">
+        <p style="font-size:15px; line-height:1.75; color:#B8B3C4; margin:0 0 16px; text-wrap:pretty;">PS3 (Portuguese Sky Sentinel System) is a Command and Control (C2) platform developed for the Portuguese Air Force to support the planning, monitoring, and execution of operational missions. Initially created to support the Special Rural Fire Fighting Device (DECIR), the platform later evolved to address Search and Rescue (SAR) requirements, enabling the management of the full incident lifecycle in accordance with IAMSAR regulations.</p>
+        <p style="font-size:15px; line-height:1.75; color:#B8B3C4; margin:0 0 16px; text-wrap:pretty;">The system provides mission planning and monitoring capabilities, bidirectional communication with aircraft, and interoperability with both Portuguese Air Force systems and external military and civilian stakeholders.</p>
+        <p style="font-size:15px; line-height:1.75; color:#B8B3C4; margin:0; text-wrap:pretty;">PS3 was built directly upon Oversee, the command and control platform originally designed and developed for the Portuguese Navy. Rather than starting from scratch, the redesign took the Navy's proven C2 foundation — its core concepts, workflows and interaction patterns — and adapted it to the specific needs of air operations, carrying over what already worked while reshaping it for the Air Force context.</p>
+      </div>
+    </section>
+
+    <!-- my role -->
+    <section style="margin-top:64px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ac,#A78BFA); margin-bottom:12px;">My Role</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:27px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 20px; padding-bottom:14px; border-bottom:1px solid #2E2B38; position:relative; display:inline-block;"><span style="position:absolute; left:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;">></span><span style="position:absolute; right:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;"><</span>UX Designer &amp; Product Owner</h2>
+      <div style="max-width:820px;">
+        <p style="font-size:15px; line-height:1.75; color:#B8B3C4; margin:0 0 16px; text-wrap:pretty;">My role spanned both UX Design and Product Ownership, enabling me to connect user experience, business strategy, and product delivery throughout the product lifecycle.</p>
+        <p style="font-size:15px; line-height:1.75; color:#B8B3C4; margin:0; text-wrap:pretty;">This combination of responsibilities fostered closer alignment between user needs and business objectives, accelerated prioritization and decision-making, and improved collaboration across stakeholders, design, and development teams. It also ensured that business requirements were translated into effective user-centered solutions, while product decisions were continuously informed by both user insights and organizational goals.</p>
+      </div>
+    </section>
+
+    <!-- responsibilities -->
+    <section style="margin-top:64px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ac,#A78BFA); margin-bottom:12px;">Responsibilities</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:27px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 24px; padding-bottom:14px; border-bottom:1px solid #2E2B38; position:relative; display:inline-block;"><span style="position:absolute; left:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;">></span><span style="position:absolute; right:-24px; top:50%; transform:translateY(-50%); font-size:14px; color:#2E2B38;"><</span>Two hats, one product</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px;">
+        <div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#F2EFE9;">Product Ownership</div>
+          <p style="font-size:14px; line-height:1.7; color:#9A94A6; margin:10px 0 12px; text-wrap:pretty;">Drove the product roadmap and prioritization process, ensuring alignment between business goals and development priorities.</p>
+          <sc-for list="{{ poItems }}" as="x" hint-placeholder-count="7">
+            <div style="display:flex; gap:12px; align-items:baseline; padding:8px 0; border-bottom:1px solid #2E2B38;">
+              <span style="font-family:'Space Grotesk',sans-serif; font-size:12px; color:#F5CE47;">-</span>
+              <span style="font-size:13.5px; color:#E6E2EE; line-height:1.5;">{{ x }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#F2EFE9;">UX Design</div>
+          <p style="font-size:14px; line-height:1.7; color:#9A94A6; margin:10px 0 12px; text-wrap:pretty;">Designed and validated user-centered solutions across a range of product modules.</p>
+          <sc-for list="{{ uxItems }}" as="x" hint-placeholder-count="7">
+            <div style="display:flex; gap:12px; align-items:baseline; padding:8px 0; border-bottom:1px solid #2E2B38;">
+              <span style="font-family:'Space Grotesk',sans-serif; font-size:12px; color:#F5CE47;">-</span>
+              <span style="font-size:13.5px; color:#E6E2EE; line-height:1.5;">{{ x }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- the interface -->
+    <section style="margin-top:64px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ac,#A78BFA); margin-bottom:12px;">The Interface</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:27px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 28px; padding-bottom:14px; border-bottom:1px solid #2E2B38;">Inside the platform</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px 28px; max-width:780px;">
+        <sc-for list="{{ screens }}" as="s" hint-placeholder-count="4">
+          <figure style="margin:0;">
+            <div style="border-radius:8px; overflow:hidden;">
+              <img src="{{ s.img }}" alt="{{ s.title }}" style="display:block; width:100%; height:auto;">
+            </div>
+            <figcaption style="margin-top:12px;">
+              <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#F2EFE9;">{{ s.title }}</div>
+              <p style="font-size:13px; line-height:1.6; color:#9A94A6; margin:5px 0 0; text-wrap:pretty;">{{ s.desc }}</p>
+            </figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <div style="margin-top:80px; padding-top:24px; border-top:1px solid #2E2B38; display:flex; justify-content:space-between; font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">
+      <a href="home.html" style="color:var(--ac,#A78BFA); text-decoration:none;" style-hover="opacity:0.7;">← Back to home</a>
+      <a href="#top" style="color:var(--ac,#A78BFA); text-decoration:none;" style-hover="opacity:0.7;">To the top ↑</a>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1040, &quot;height&quot;: 1100},
+  &quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#A78BFA&quot;, &quot;tsType&quot;: &quot;string&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const poItems = [
+      'Backlog management and prioritization',
+      'Writing and refining user stories and acceptance criteria',
+      'Sprint planning and backlog refinement sessions',
+      'Stakeholder management',
+      'Supporting development teams during implementation',
+      'Sprint reviews and product demonstrations',
+      'Balancing business value, technical constraints, and user needs',
+    ];
+    const uxItems = [
+      'User research and stakeholder interviews',
+      'User flows and task analysis',
+      'Information architecture',
+      'Wireframing and prototyping',
+      'Interaction design',
+      'Design documentation and handoff',
+    ];
+    const screens = [
+      {
+        title: 'Integrated picture',
+        desc: "PS³'s Integrated Picture comprises a map overlaid with information retrieved from multiple data sources. It provides a geo-referenced display of traffic information, alerts, incidents and meteorological/oceanographic information, among other things. It also provides a number of GIS tools.",
+        img: 'images/ps3_1.png',
+      },
+      {
+        title: 'Mission log',
+        desc: 'A chronological log of entries and communications, filterable by date and coordination centre.',
+        img: 'images/ps2.png',
+      },
+      {
+        title: 'Log entry',
+        desc: 'A focused form to record communications and events, linked to the relevant mission records.',
+        img: 'images/ps_3.png',
+      },
+      {
+        title: 'Assets',
+        desc: 'Assets holds information about assets, their operational status and location information. The database is continuously fed with the information.',
+        img: 'images/ps3_4.png',
+      },
+    ];
+    const accent = this.props.accent ?? '#A78BFA';
+    return { poItems, uxItems, screens, accent };
+  }
+}
+</script>
+</body>
+</html>

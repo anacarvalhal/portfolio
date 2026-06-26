@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    @keyframes pageIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+    #top{animation:pageIn .55s cubic-bezier(.22,.61,.36,1) both;}
+    #top.is-leaving{animation:none!important;opacity:0;transform:translateY(-6px);transition:opacity .3s ease,transform .3s ease;}
+    @media (prefers-reduced-motion:reduce){#top{animation:none;}#top.is-leaving{transition:none;}}
+  </style>
+
+</helmet>
+
+<div id="top" style="--ac: {{ accent }}; min-height:100vh; background:#1A1822; font-family:'Space Grotesk',sans-serif;">
+  <div style="max-width:880px; margin:0 auto; padding:48px 72px 96px;">
+
+    <!-- top bar -->
+    <div style="display:flex; justify-content:space-between; align-items:center; font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#A89AB3;">
+      <a href="home.html" style="color:var(--ac,#A78BFA); text-decoration:none;" style-hover="opacity:0.7;">← Back to home</a>
+      <a href="Ana Carvalhal - CV.pdf" style="color:#F5CE47; text-decoration:none; font-weight:600;" style-hover="color:var(--ac,#A78BFA);">Download PDF ↓</a>
+    </div>
+
+    <!-- header -->
+    <div style="text-align:center; margin-top:36px;">
+      <div style="width:120px; height:120px; border-radius:50%; overflow:hidden; display:inline-block; vertical-align:middle;">
+        <img src="uploads/ana_carvalhal.png" alt="Ana Luísa Carvalhal" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:46px; letter-spacing:-0.025em; color:#F2EFE9; margin:22px 0 0;">Ana Luísa Carvalhal</h1>
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#F2EFE9; margin-top:16px;">Senior Product Designer &amp; Product Owner | Product Strategy, UX &amp; Research</div>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:6px 16px; margin-top:12px; font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.04em; color:#A89AB3;">
+        <a href="https://www.linkedin.com/in/anacarvalhal/" target="_blank" rel="noopener" style="color:#A89AB3; text-decoration:none;" style-hover="color:var(--ac,#F6D563); text-decoration:underline;">linkedin.com/in/anacarvalhal</a><span style="color:rgba(168,154,179,0.32);">|</span><a href="mailto:carvalhal.ana@gmail.com" style="color:#A89AB3; text-decoration:none;" style-hover="color:var(--ac,#F6D563); text-decoration:underline;">carvalhal.ana<span>&#64;</span>gmail.com</a><span style="color:rgba(168,154,179,0.32);">|</span><span>+351 932 592 799</span>
+      </div>
+    </div>
+
+    <!-- core skills -->
+    <div style="margin-top:48px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 18px; padding-bottom:12px; border-bottom:1px solid #2E2B38;">Core Skills</h2>
+      <sc-for list="{{ skills }}" as="s" hint-placeholder-count="4">
+        <div style="margin-top:16px;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A78BFA; margin-bottom:6px;">{{ s.group }}</div>
+          <div style="font-size:14px; line-height:1.6; color:#9A94A6;">{{ s.items }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- professional summary -->
+    <div style="margin-top:48px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 18px; padding-bottom:12px; border-bottom:1px solid #2E2B38;">Professional Summary</h2>
+      <sc-for list="{{ summary }}" as="p" hint-placeholder-count="6">
+        <p style="font-size:14px; line-height:1.7; color:#9A94A6; margin:0 0 14px; text-wrap:pretty;">{{ p }}</p>
+      </sc-for>
+    </div>
+
+    <!-- career history -->
+    <div style="margin-top:48px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 28px; padding-bottom:12px; border-bottom:1px solid #2E2B38;">Career History</h2>
+      <div style="border-left:1px solid #2E2B38; padding-left:32px; display:flex; flex-direction:column; gap:30px;">
+        <sc-for list="{{ career }}" as="c" hint-placeholder-count="6">
+          <div style="position:relative;">
+            <span style="position:absolute; left:-37px; top:5px; width:9px; height:9px; border-radius:50%; background:#F5CE47;"></span>
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.06em; color:#F5CE47;">{{ c.dates }}</div>
+            <div style="font-size:14px; font-weight:700; letter-spacing:0.02em; color:#F2EFE9; margin-top:6px;">{{ c.title }}<span style="font-weight:400; color:#8A8498;">, {{ c.org }}</span></div>
+            <ul style="margin:10px 0 0; padding-left:18px;">
+              <sc-for list="{{ c.bullets }}" as="b" hint-placeholder-count="3">
+                <li style="font-size:13.5px; line-height:1.6; color:#9A94A6; margin-bottom:6px; padding-left:4px; text-wrap:pretty;">{{ b }}</li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- education -->
+    <div style="margin-top:48px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 28px; padding-bottom:12px; border-bottom:1px solid #2E2B38;">Education</h2>
+      <div style="border-left:1px solid #2E2B38; padding-left:32px; display:flex; flex-direction:column; gap:30px;">
+        <sc-for list="{{ education }}" as="e" hint-placeholder-count="2">
+          <div style="position:relative;">
+            <span style="position:absolute; left:-37px; top:5px; width:9px; height:9px; border-radius:50%; background:#F5CE47;"></span>
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.06em; color:#F5CE47;">{{ e.dates }}</div>
+            <div style="font-size:14px; font-weight:700; letter-spacing:0.02em; color:#F2EFE9; margin-top:6px;">{{ e.title }}<span style="font-weight:400; color:#8A8498;">, {{ e.org }}</span></div>
+            <p style="font-size:13.5px; line-height:1.6; color:#9A94A6; margin:9px 0 0; text-wrap:pretty;">{{ e.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- training & certifications -->
+    <div style="margin-top:48px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 18px; padding-bottom:12px; border-bottom:1px solid #2E2B38;">Professional Training &amp; Certifications</h2>
+      <div style="font-size:14px; line-height:1.6; color:#9A94A6;">{{ certifications }}</div>
+    </div>
+
+    <!-- languages -->
+    <div style="margin-top:48px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:22px; letter-spacing:-0.01em; color:#F2EFE9; margin:0 0 18px; padding-bottom:12px; border-bottom:1px solid #2E2B38;">Languages</h2>
+      <div style="font-size:14px; line-height:1.6; color:#9A94A6;">{{ languages }}</div>
+    </div>
+
+    <!-- footer -->
+    <div style="margin-top:64px; padding-top:24px; border-top:1px solid #2E2B38; display:flex; justify-content:space-between; font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">
+      <a href="home.html" style="color:#A78BFA; text-decoration:none;" style-hover="opacity:0.7;">← Back to home</a>
+      <a href="#top" style="color:#A78BFA; text-decoration:none;" style-hover="opacity:0.7;">To the top ↑</a>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 880, &quot;height&quot;: 1100},
+  &quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#A78BFA&quot;, &quot;tsType&quot;: &quot;string&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const skillsRaw = [
+      ['UX, Research & Experience Design', ['UX Strategy', 'Product Design Across Full Lifecycle', 'User Research', 'Customer Insights', 'Information Architecture', 'Interaction Design', 'Service Design', 'Journey Mapping', 'Workflow Analysis', 'Usability Testing', 'Human Factors', 'Design Systems', 'Accessibility (WCAG)']],
+      ['Product Ownership & Strategy', ['Product Ownership', 'Product Strategy', 'Product Discovery', 'Roadmapping', 'Prioritisation', 'Business Analysis', 'Opportunity Framing', 'Requirements Definition', 'Backlog Management']],
+      ['Leadership & Collaboration', ['Team Leadership', 'Stakeholder Management', 'Workshop Facilitation', 'Cross-functional Collaboration', 'Agile / Scrum', 'Developer Collaboration', 'Mentoring', 'Delivery Coordination']],
+      ['AI & Design', ['AI-Assisted Design Workflows', 'Human-AI Interaction Design', 'Figma', 'VS Code', 'Claude Code']],
+    ];
+    const skills = skillsRaw.map(s => ({ group: s[0], items: s[1].join('  •  ') }));
+
+    const summary = [
+      'Senior Product Designer, Product Owner, and former Head of Product Design with 20+ years of experience in UX, product strategy, and digital product development across enterprise and regulated environments.',
+      'Led and managed a multidisciplinary UX and Product Design team of 29 designers, and operated as Product Owner across complex enterprise and safety-critical systems, contributing to product discovery, prioritisation, and cross-functional delivery.',
+      'Delivered digital products across healthcare, aerospace, defence, railway, and enterprise software domains, working across the full product lifecycle from discovery and definition through to design and delivery.',
+      'Strong expertise in UX research, interaction design, information architecture, usability engineering, and Human Factors, with experience designing complex systems, workflows, and enterprise digital products.',
+      'Proven ability to lead discovery workshops, facilitate stakeholder alignment, and translate ambiguity into structured product direction and actionable roadmaps.',
+      'Most of my work has been delivered across multiple domains under strict confidentiality agreements, which limits public portfolio material. However, I can discuss case studies and walk through my design process, decision-making, and outcomes during interviews.',
+    ];
+
+    const career = [
+      { title: 'UX Designer', org: 'Critical Software', dates: '2018 - Present', bullets: [
+        'Led UX research, product discovery, and interaction design for complex enterprise systems across multiple industries.',
+        'Conducted user research, workflow analysis, usability testing, and solution validation.',
+        'Designed information architecture, journeys, workflows, wireframes, and prototypes for end-to-end experiences.',
+        'Collaborated with engineers, architects, and domain experts to deliver user-centred solutions.',
+      ] },
+      { title: 'Product Owner', org: 'Critical Software', dates: '2018 - 2022', bullets: [
+        'Defined and managed product backlogs, requirements, and prioritisation aligned with business, user, and technical needs.',
+        'Supported product discovery, roadmap definition, and cross-functional alignment.',
+        'Facilitated stakeholder engagement and translated insights into product decisions.',
+      ] },
+      { title: 'UX/UI Designer', org: 'Bosch Thermotechnology', dates: '2014 - 2018', bullets: [
+        'Refactored an existing mobile app to improve usability, consistency, and overall user experience.',
+        'Designed a mobile IoT smart-home application for energy and climate control from scratch.',
+        'Collaborated with engineering, product, and business teams to define requirements and deliver production-ready solutions.',
+      ] },
+      { title: 'Team Leader & Scrum Master', org: 'Bosch Thermotechnology', dates: '2014 - 2017', bullets: [
+        'Led a cross-functional mobile product team, facilitating Agile delivery and continuous improvement.',
+        'Introduced Scrum practices that improved planning, prioritisation, and team alignment.',
+        'Coordinated collaboration between design, development, and business stakeholders.',
+      ] },
+      { title: 'UX/UI Designer', org: 'The App3 Software & Consulting', dates: '2013 - 2014', bullets: [
+        'Contributed to product definition and designed end-to-end user experience for an open-source oncology platform for healthcare professionals.',
+        'Collaborated with stakeholders and engineering teams to define requirements and scope features.',
+        'Supported cross-functional alignment to ensure consistent delivery of product initiatives.',
+      ] },
+      { title: 'RD&I Management System Owner', org: 'Alert Life Sciences Computing S.A.', dates: '2012 - 2013', bullets: [
+        'Designed and implemented an RD&I management system aligned with NP 4457:2007 certification requirements.',
+      ] },
+      { title: 'Head of Product Design', org: 'Alert Life Sciences Computing S.A.', dates: '2008 - 2013', bullets: [
+        'Led and managed a multidisciplinary team of 29 designers across multiple healthcare products.',
+        'Defined UX strategy, design standards, and governance across the organisation.',
+        'Established user-centred design practices embedded into product development processes.',
+        'Provided design leadership, reviews, and mentorship across teams.',
+        'Aligned design operations with product and business priorities.',
+      ] },
+      { title: 'Senior Product Designer', org: 'Alert Life Sciences Computing S.A.', dates: '2008', bullets: [
+        'Designed user interfaces for healthcare software used in paperless clinical environments, with focus on usability, accessibility, and clinical workflows.',
+        'Supported junior designers through informal mentorship and design quality feedback.',
+      ] },
+      { title: 'Interaction Designer', org: 'Memória Visual', dates: '2007 - 2008', bullets: [
+        'Designed web and multimedia interfaces with focus on interaction design and visual communication.',
+      ] },
+      { title: 'Product Designer', org: 'Alert Life Sciences Computing S.A.', dates: '2005 - 2007', bullets: [
+        'Designed user interfaces for healthcare software supporting paperless clinical environments, focusing on usability and workflow efficiency.',
+      ] },
+      { title: 'Communication Designer', org: 'SODA - Design e Comunicação', dates: '2005', bullets: [
+        'Delivered branding, editorial, promotional, web, and multimedia design solutions for clients across multiple sectors.',
+      ] },
+      { title: 'Communication Designer', org: 'Triple Design', dates: '2004 - 2005', bullets: [
+        'Designed branding, corporate identity, editorial, and promotional materials for a range of client communication projects.',
+      ] },
+    ];
+
+    const education = [
+      { title: 'Postgraduate Diploma in Human-Computer Interaction', org: 'ESEC Polytechnic University of Coimbra', dates: '2014 - 2015', body: 'Specialisation in user-centred design, usability evaluation, interaction design, service design, and digital product development.' },
+      { title: 'Five-Year Degree in Communication Design', org: 'Faculty of Fine Arts, University of Porto (FBAUP)', dates: '1999 - 2004', body: 'Strong foundation in visual systems, typography, information design, and interaction principles. Explored multimedia and early digital interaction design, bridging traditional and digital media.' },
+    ];
+
+    const certifications = 'Certified Scrum Master (CSM)  •  UX Fundamentals (Bosch UX)  •  Leadership & Communication  •  BPM Modelling  •  Business Creation';
+    const languages = 'Portuguese (Native)  •  English (C2)';
+
+    const accent = this.props.accent ?? '#A78BFA';
+    return { skills, summary, career, education, certifications, languages, accent };
+  }
+}
+</script>
+</body>
+</html>

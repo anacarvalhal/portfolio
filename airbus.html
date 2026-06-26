@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    body{margin:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    @keyframes pageIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+    #top{animation:pageIn .55s cubic-bezier(.22,.61,.36,1) both;}
+    #top.is-leaving{animation:none!important;opacity:0;transform:translateY(-6px);transition:opacity .3s ease,transform .3s ease;}
+    @media (prefers-reduced-motion:reduce){#top{animation:none;}#top.is-leaving{transition:none;}}
+  </style>
+
+</helmet>
+
+<div id="top" style="--ac: {{ accent }}; min-height:100vh; background:#1A1822; font-family:'Space Grotesk',sans-serif;">
+  <div style="max-width:1080px; margin:0 auto; padding:56px 72px 96px;">
+
+    <!-- header -->
+    <div style="display:flex; justify-content:space-between; align-items:center; font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#7E7890;">
+      <a href="home.html" style="color:var(--ac,#A78BFA); text-decoration:none;" style-hover="opacity:0.7;">← Back to home</a>
+      <span>Aerospace</span>
+    </div>
+    <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:70px; line-height:0.98; letter-spacing:-0.03em; color:#F2EFE9; margin:30px 0 0;">Airbus FCMS</h1>
+    <p style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:22px; line-height:1.5; color:#B8B3C4; margin:24px 0 0; max-width:780px; text-wrap:pretty;">Future Cabin Management System — a complex, safety-critical operations interface designed around how flight crews actually work, across every phase of the design process.</p>
+    <div style="display:flex; gap:64px; margin:40px 0 0; padding:24px 0; border-top:1px solid #2E2B38; border-bottom:1px solid #2E2B38;">
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Role</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">UX Designer</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Sector</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">Aerospace · Safety-critical</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Client</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">Airbus</div></div>
+      <div><div style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#F5CE47;">Timeline</div><div style="font-size:14px; color:#F2EFE9; margin-top:6px;">2023 - 2025</div></div>
+    </div>
+
+    <!-- intro -->
+    <div style="margin-top:56px; max-width:820px;">
+      <div style="display:flex; gap:18px; padding:18px 22px; background:#2A2733; border-left:2px solid var(--ac,#A78BFA); border-radius:2px;">
+        <span style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ac,#A78BFA); padding-top:3px; white-space:nowrap;">Under NDA</span>
+        <p style="font-size:14.5px; line-height:1.65; color:#C4BFCF; margin:0; text-wrap:pretty;">This project is covered by a non-disclosure agreement, so no real screens or imagery can be shown here.</p>
+      </div>
+      <p style="font-family:'Space Grotesk',sans-serif; font-weight:400; font-size:20px; line-height:1.55; color:#B8B3C4; margin:28px 0 0; text-wrap:pretty;">It was a deeply enriching engagement. I worked alongside the design team across the different phases of the design process - a cycle we repeated for each of the modules and clusters we worked on. Below I describe each phase and my contribution to it.</p>
+    </div>
+
+    <!-- process timeline -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin:64px 0 36px; font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">
+      <span style="color:#F2EFE9;">The Process</span>
+    </div>
+    <div style="border-left:1px solid #2E2B38; padding-left:48px; display:flex; flex-direction:column; gap:84px;">
+      <sc-for list="{{ phases }}" as="ph" hint-placeholder-count="5">
+        <div style="position:relative;">
+          <span style="position:absolute; left:-54px; top:6px; width:11px; height:11px; border-radius:50%; background:#F5CE47;"></span>
+          <!-- phase header -->
+          <div style="display:flex; gap:40px; align-items:flex-start;">
+            <div style="flex:none; width:300px; height:210px; border:1px solid #2E2B38; border-radius:2px; overflow:hidden; background:#232029;">
+              <img src="{{ ph.img }}" alt="{{ ph.t }} illustration" style="display:block; width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div style="flex:1;">
+              <div style="font-family:'Space Grotesk',sans-serif; font-size:12px; letter-spacing:0.1em; color:var(--ac,#A78BFA);">PHASE {{ ph.num }}</div>
+              <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:32px; letter-spacing:-0.02em; color:#F2EFE9; margin:8px 0 0;">{{ ph.t }}</h3>
+              <sc-if value="{{ ph.hasQuestion }}" hint-placeholder-val="{{ false }}">
+                <p style="font-family:'Space Grotesk',sans-serif; font-style:italic; font-weight:500; font-size:21px; line-height:1.4; color:var(--ac,#A78BFA); margin:14px 0 0; text-wrap:pretty;">{{ ph.question }}</p>
+              </sc-if>
+              <div style="display:flex; gap:14px; margin-top:18px; padding:14px 18px; background:#2A2733; border-left:2px solid var(--ac,#A78BFA); border-radius:2px;">
+                <span style="font-family:'Space Grotesk',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ac,#A78BFA); padding-top:3px;">Goal</span>
+                <p style="font-size:14.5px; line-height:1.6; color:#C4BFCF; margin:0; text-wrap:pretty;">{{ ph.goal }}</p>
+              </div>
+            </div>
+          </div>
+          <!-- phase detail -->
+          <div style="max-width:860px; margin-top:34px;">
+            <sc-if value="{{ ph.hasActivities }}" hint-placeholder-val="{{ true }}">
+              <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#F2EFE9; padding-bottom:12px; border-bottom:1px solid #2E2B38;">Activities</div>
+              <sc-for list="{{ ph.activities }}" as="a" hint-placeholder-count="3">
+                <div style="margin-top:24px;">
+                  <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:600; color:#F2EFE9;">{{ a.name }}</div>
+                  <sc-if value="{{ a.hasBody }}" hint-placeholder-val="{{ true }}">
+                    <p style="font-size:14.5px; line-height:1.72; color:#9A94A6; margin:8px 0 0; text-wrap:pretty;">{{ a.body }}</p>
+                  </sc-if>
+                  <sc-if value="{{ a.hasBullets }}" hint-placeholder-val="{{ false }}">
+                    <ul style="margin:12px 0 0; padding-left:20px;">
+                      <sc-for list="{{ a.bullets }}" as="b" hint-placeholder-count="3">
+                        <li style="font-size:14px; line-height:1.6; color:#B8B3C4; margin-bottom:9px; padding-left:4px; text-wrap:pretty;">{{ b }}</li>
+                      </sc-for>
+                    </ul>
+                  </sc-if>
+                  <sc-if value="{{ a.hasTags }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;">
+                      <sc-for list="{{ a.tags }}" as="t" hint-placeholder-count="4">
+                        <span style="font-family:'Space Grotesk',sans-serif; font-size:11.5px; color:#E6E2EE; background:#2A2733; border:1px solid #2E2B38; border-radius:2px; padding:6px 11px;">{{ t }}</span>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </sc-if>
+            <sc-if value="{{ ph.hasNote }}" hint-placeholder-val="{{ false }}">
+              <p style="font-size:14.5px; line-height:1.7; color:#9A94A6; margin:24px 0 0; font-style:italic; text-wrap:pretty;">{{ ph.note }}</p>
+            </sc-if>
+            <sc-if value="{{ ph.hasExtras }}" hint-placeholder-val="{{ false }}">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:40px;">
+                <sc-if value="{{ ph.hasDeliverables }}" hint-placeholder-val="{{ false }}">
+                  <div>
+                    <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#F2EFE9; padding-bottom:12px; border-bottom:1px solid #2E2B38;">Deliverables</div>
+                    <sc-for list="{{ ph.deliverables }}" as="d" hint-placeholder-count="3">
+                      <div style="display:flex; gap:12px; align-items:baseline; padding:9px 0; border-bottom:1px solid #2E2B38;">
+                        <span style="font-family:'Space Grotesk',sans-serif; font-size:12px; color:#F5CE47;">-</span>
+                        <span style="font-size:14px; color:#E6E2EE;">{{ d }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ ph.hasOutputs }}" hint-placeholder-val="{{ false }}">
+                  <div>
+                    <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#F2EFE9; padding-bottom:14px; border-bottom:1px solid #2E2B38;">{{ ph.outputsLabel }}</div>
+                    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;">
+                      <sc-for list="{{ ph.outputs }}" as="o" hint-placeholder-count="3">
+                        <span style="font-family:'Space Grotesk',sans-serif; font-size:11.5px; color:#E6E2EE; background:#2A2733; border:1px solid #2E2B38; border-radius:2px; padding:6px 11px;">{{ o }}</span>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- footer -->
+    <div style="margin-top:80px; padding-top:24px; border-top:1px solid #2E2B38; display:flex; justify-content:space-between; font-family:'Space Grotesk',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">
+      <a href="home.html" style="color:var(--ac,#A78BFA); text-decoration:none;" style-hover="opacity:0.7;">← Back to home</a>
+      <a href="#top" style="color:var(--ac,#A78BFA); text-decoration:none;" style-hover="opacity:0.7;">To the top ↑</a>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1080, &quot;height&quot;: 960},
+  &quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#A78BFA&quot;, &quot;tsType&quot;: &quot;string&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const raw = [
+      {
+        t: 'Understand',
+        img: 'images/phase-1-understand.svg',
+        question: 'What is the real problem - and who are we solving it for?',
+        goal: 'Identify key user needs, system constraints, and business objectives to establish a solid foundation for the design direction.',
+        activities: [
+          { name: 'User Interviews', body: 'User interviews were conducted across the different areas involved in the project to identify key user needs, challenges, and opportunities for improvement. Each identified issue was linked to supporting user quotes, ensuring findings were grounded in real user feedback. Findings were categorized by functional area, impacted user profile, type of issue, and the functionality or workflow to be validated during testing. The insights gathered served as the foundation for the workshops.' },
+          { name: 'System Inspection / Heuristic Walkthrough', body: 'A system inspection and heuristic walkthrough was conducted for each module, covering the different aircraft models and application versions. Existing workflows and interfaces were reviewed to identify usability issues, inconsistencies, and areas for improvement. Findings were combined with the pain points previously identified during user interviews, helping validate existing issues and uncover additional opportunities for optimization. Based on the consolidated findings, a prioritized to-be improvement backlog was created for each module.' },
+          { name: 'Goals Workshop', body: 'Dedicated workshops were run for each functional area, with the client-side area owner, user representatives, and other stakeholders. Each followed a structured agenda: a demonstration of the current system, a review of the functional scope, and an open discussion of business, certification and customization goals alongside the Voice of the Customer. The user goals and pain points from the interviews were then presented and validated with user representatives. Finally, the research insights and workshop outcomes were translated into actionable Design Goals, with testing scenarios defined from the goals and pain points and mapped to specific functionalities.' },
+        ],
+        note: 'Workshop outcomes, agreed Design Goals, and testing activities were consolidated and documented as next steps.',
+        outputs: ['Synthesised interview findings', 'System inspection report', 'Design Goals', 'Tasks for testing defined'],
+      },
+      {
+        t: 'Explore',
+        img: 'images/phase-2-explore.svg',
+        question: 'What could the solution be - and which direction is worth pursuing?',
+        goal: 'Generate, explore, and validate multiple solution directions before investing in detailed design.',
+        activities: [
+          { name: 'Ideation & Concept Development', body: 'Building on the prioritised How Might We (HMW) questions, ideation and sketching sessions were run to open up the solution space. The content and interaction components needed to support the experience were defined, and alternative ways of realising them were explored through sketches, concepts, and competing solution options.' },
+          { name: 'Concept Design', body: 'The most promising ideas were taken into wireflows that visualised the key user journeys and interaction flows, supported by low-fidelity concepts that gave a tangible representation of each potential solution.' },
+          { name: 'Concept Validation', body: 'Low-fidelity concepts were tested and compared with users and stakeholders. Findings were evaluated to identify the most promising solution directions to carry forward.' },
+        ],
+        outputs: ['Validated & prioritized concepts', 'Recommended design direction(s)'],
+      },
+      {
+        t: 'Materialize',
+        img: 'images/phase-3-materialize.svg',
+        question: 'How do the chosen directions hold up once they are real - and what should change?',
+        goal: 'Transform selected concepts into detailed design solutions and validate them through user testing.',
+        activities: [
+          { name: 'Design Development', body: 'The selected concepts were evolved into medium- and high-fidelity designs, refining the content structure, interaction patterns, and user flows into a coherent, testable solution.' },
+          { name: 'Test Planning', body: 'A usability test plan was developed and aligned with stakeholders, defining the research questions and the success criteria each task would be measured against.' },
+          { name: 'Prototyping', body: 'An interactive prototype was built from the approved designs and test plan, together with all testing materials - the moderator script, a note-taking template, the research questions and success criteria, and the SUS (System Usability Scale) questionnaire.' },
+          { name: 'User Testing', body: 'Moderated usability sessions were run to collect both qualitative and quantitative data: user observations and feedback, task completion and success rates, SEQ (Single Ease Question) scores, and SUS scores.' },
+          { name: 'Insight Generation', body: 'Participant notes and observations were consolidated in Dovetail, then synthesised to surface recurring patterns and turn them into actionable insights and recommendations.' },
+          { name: 'Test Analysis Workshop', body: 'Findings were presented and discussed with stakeholders. Performance was reviewed against the predefined research questions and success criteria - task and subtask completion rates, per-task SEQ results, and the overall SUS score, benchmarked where relevant. The most significant insights were presented with supporting evidence, the number of participants affected, and design recommendations. Opportunities and issues were then prioritised on an impact/feasibility matrix.' },
+        ],
+        note: '',
+        hasNote: false,
+        outputs: ['Consolidated findings & insights', 'Prioritized recommendations', 'Agreed next steps'],
+      },
+      {
+        t: 'Deliver',
+        img: 'images/phase-4-deliver.svg',
+        question: 'Is the solution complete, consistent, and ready to build?',
+        goal: 'Finalize the design solution, ensure consistency across all user journeys and conditions, and provide implementation-ready design documentation and assets.',
+        activities: [
+          { name: 'Detailed Design', body: 'Detailed designs were completed for all user journeys, states, and edge cases, fully specifying interactions, content variations, and responsive behaviours, and finalising every screen for handoff.' },
+          { name: 'Design System Evolution', body: 'The Design System and UI Library were updated and extended from the validated solution - creating and refining reusable components, patterns, and templates to keep the product ecosystem consistent.' },
+          { name: 'Guidelines & Documentation', body: 'The Style Guide was updated to reflect the latest decisions, documenting visual design principles, interaction guidelines, component usage and accessibility considerations. Syspages were created to capture page-level component behaviour, interaction logic and states, dynamic content rules, validation and error handling, and the functional specifications needed for implementation.' },
+          { name: 'Design Specification & Handoff', body: 'End-to-end screenflows illustrated the complete user journeys, alongside implementation-ready specifications and assets - supporting close alignment between design and development teams throughout handoff. Syspages specifications were delivered as detailed Excel documents capturing the behaviour of each component across all functional states, conditions, and edge cases.' },
+        ],
+        outputs: ['Detailed design', 'Design System & UI Library update', 'Styleguide update', 'Syspages specification', 'Information architecture'],
+      },
+    ];
+    const phases = raw.map((p, i) => ({
+      num: String(i + 1).padStart(2, '0'),
+      t: p.t,
+      img: p.img,
+      goal: p.goal || '',
+      question: p.question || '',
+      hasQuestion: !!p.question,
+      note: p.note || '',
+      hasNote: !!p.note,
+      activities: (p.activities || []).map(a => ({
+        name: a.name,
+        body: a.body || '',
+        hasBody: !!a.body,
+        bullets: a.bullets || [],
+        hasBullets: !!(a.bullets && a.bullets.length),
+        tags: a.tags || [],
+        hasTags: !!(a.tags && a.tags.length),
+      })),
+      hasActivities: !!(p.activities && p.activities.length),
+      deliverables: p.deliverables || [],
+      hasDeliverables: !!(p.deliverables && p.deliverables.length),
+      outputs: p.outputs || [],
+      hasOutputs: !!(p.outputs && p.outputs.length),
+      outputsLabel: p.outputsLabel || 'Outputs I delivered',
+      hasExtras: !!((p.deliverables && p.deliverables.length) || (p.outputs && p.outputs.length)),
+    }));
+
+    const accent = this.props.accent ?? '#A78BFA';
+    return { phases, accent };
+  }
+}
+</script>
+</body>
+</html>

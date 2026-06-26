@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="min-height:100vh; background:#1A1822; font-family:'Space Grotesk',sans-serif; display:flex; align-items:center; justify-content:center; padding:24px;">
+  <div style="width:100%; max-width:480px;">
+    
+    <div style="background:#A78BFA; border-radius:24px; padding:60px 48px; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+      
+      <div style="text-align:center; margin-bottom:48px;">
+        <div style="font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:#1A1822; margin-bottom:16px;">Portfolio</div>
+        <h1 style="font-weight:700; font-size:56px; line-height:1.05; letter-spacing:-0.03em; color:#1A1822; margin:0;">Ana Luísa Carvalhal</h1>
+        <p style="font-size:13px; color:#2A1F45; margin:12px 0 0; letter-spacing:0.05em; text-transform:uppercase;">Senior Product Designer & Product Owner — Product Strategy, UX & Research</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <label style="display:block; font-size:12px; font-weight:600; color:#1A1822; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.08em;">Password</label>
+        <div style="position:relative; display:flex; align-items:center;">
+          <input type="password" placeholder="Enter your password" value="{{ password }}" onChange="{{ handlePasswordChange }}" style="width:100%; padding:14px 16px; padding-right:44px; background:#F2EFE9; border:1px solid #1A1822; border-radius:8px; font-size:14px; color:#1A1822; font-family:'Space Grotesk',sans-serif; box-sizing:border-box;" style-focus="outline:none; border-color:#1A1822; box-shadow:0 0 0 2px rgba(26,24,34,0.15);" />
+          <style style="--placeholder-color: #2A1F45;">
+            input::placeholder { color: var(--placeholder-color); opacity: 0.6; }
+          </style>
+        </div>
+        <sc-if value="{{ errorMsg }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#1A1822; padding:8px 12px; border-radius:6px; margin-top:8px;">
+            <p style="font-size:12px; color:#FF4444; margin:0; font-weight:600;">{{ errorMsg }}</p>
+          </div>
+        </sc-if>
+      </div>
+
+      <button onClick="{{ handleLogin }}" style="width:100%; background:#1A1822; color:#F2EFE9; border:none; border-radius:40px; padding:16px 22px; font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:600; letter-spacing:0.02em; cursor:pointer; transition:transform .18s ease, box-shadow .18s ease; margin:28px auto 24px; display:block; box-shadow:5px 5px 0 #F5CE47;" style-hover="transform:translate(2px, 2px); box-shadow:3px 3px 0 #F5CE47; background:#2A2440;">
+        Access Portfolio <span style="font-size:16px;">→</span>
+      </button>
+
+      <sc-if value="{{ errorMsg }}" hint-placeholder-val="{{ false }}">
+      </sc-if>
+
+      <div style="text-align:center; border-top:1px solid rgba(26,24,34,0.2); padding-top:16px; margin-top:16px;">
+        <p style="font-size:11px; color:#1A1822; margin:0; line-height:1.5;">
+          Don't have the password?
+          <a href="mailto:carvalhal.ana@gmail.com?subject=Portfolio%20Access%20Request&body=Hi%20Ana,%0A%0AI%20would%20like%20to%20request%20access%20to%20your%20design%20portfolio.%0A%0AThank%20you!" style="color:#1A1822; text-decoration:none; font-weight:600; display:inline; font-size:11px;" style-hover="opacity:0.7;">
+            Send an email to request access
+          </a>
+        </p>
+      </div>
+
+    </div>
+
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;500px&quot;,&quot;height&quot;:&quot;700px&quot;}}">
+class Component extends DCLogic {
+  state = { password: '', errorMsg: '', showPassword: false };
+
+  componentDidMount() {
+    // Check login timeout (1 hour = 3600000 ms)
+    const loginTime = localStorage.getItem('portfolioLoginTime');
+    if (loginTime) {
+      const elapsed = Date.now() - parseInt(loginTime);
+      if (elapsed > 3600000) {
+        localStorage.removeItem('portfolioLoginTime');
+        window.location.href = 'login.html';
+      }
+    }
+  }
+
+  handlePasswordChange = (e) => {
+    this.setState({ password: e.target.value, errorMsg: '' });
+  };
+
+  togglePasswordVisibility = () => {
+    this.setState(s => ({ showPassword: !s.showPassword }));
+  };
+
+  togglePasswordVisibility = () => {
+    this.setState({ showPassword: !this.state.showPassword });
+  };
+
+  handleLogin = () => {
+    const correctPassword = 'Portfolio2026';
+    if (this.state.password === correctPassword) {
+      localStorage.setItem('portfolioLoginTime', Date.now().toString());
+      window.location.href = 'home.html';
+    } else {
+      this.setState({ errorMsg: 'Incorrect password' });
+    }
+  };
+
+  renderVals() {
+    return {
+      password: this.state.password,
+      errorMsg: this.state.errorMsg,
+      showPassword: this.state.showPassword,
+      handlePasswordChange: this.handlePasswordChange,
+      togglePasswordVisibility: this.togglePasswordVisibility,
+      handleLogin: this.handleLogin,
+    };
+  }
+}
+</script>
+</body>
+</html>
